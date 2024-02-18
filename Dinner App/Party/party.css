@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #646464;
+}
+
+.nameInput,
+.joinCode {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 300px;
+  background-color: rgb(235, 235, 235);
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.generatedCode {
+  padding: 10px 20px;
+  font-size: 16px;
+  width: 300px;
+  background-color: rgb(235, 235, 235);
+  border: 2px solid black;
+  border-radius: 10px;
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#partyLeaderButton,
+#partyMemberButton {
+  padding: 10px 20px;
+  margin: 5px;
+  width: 165px;
+  font-size: 16px;
+  background-color: rgb(235, 235, 235);
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#partyLeaderButton.clicked,
+#partyMemberButton.clicked {
+  background-color: rgba(180, 255, 173, 0.7);
+}
+
+.partyContent {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.joinedMembers {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

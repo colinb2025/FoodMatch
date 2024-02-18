@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>requirements</title>
+    <link rel="stylesheet" href="requirements.css" />
+</head>
+
+<body>
+    <div class="button-grid">
+        <button class="grid-button burgers" onclick="toggleButton(this, 'Burgers')">
+            <div class="button-text">Burgers</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button pizza" onclick="toggleButton(this, 'Pizza')">
+            <div class="button-text">Pizza</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button barfood" onclick="toggleButton(this, 'Bar Food')">
+            <div class="button-text">Bar Food</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button steak" onclick="toggleButton(this, 'Steak')">
+            <div class="button-text">Steak</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button seafood" onclick="toggleButton(this, 'Seafood')">
+            <div class="button-text">Seafood</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button wings" onclick="toggleButton(this, 'Wings')">
+            <div class="button-text">Wings</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button sandwich" onclick="toggleButton(this, 'Sandwich')">
+            <div class="button-text">Sandwich</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button sushi" onclick="toggleButton(this, 'Sushi')">
+            <div class="button-text">Sushi</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button chinese" onclick="toggleButton(this, 'Chinese')">
+            <div class="button-text">Chinese</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button cuban" onclick="toggleButton(this, 'Cuban')">
+            <div class="button-text">Cuban</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button greek" onclick="toggleButton(this, 'Greek')">
+            <div class="button-text">Greek</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button indian" onclick="toggleButton(this, 'Indian')">
+            <div class="button-text">Indian</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button italian" onclick="toggleButton(this, 'Italian')">
+            <div class="button-text">Italian</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button japanese" onclick="toggleButton(this, 'Japanese')">
+            <div class="button-text">Japanese</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button korean" onclick="toggleButton(this, 'Korean')">
+            <div class="button-text">Korean</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button mexican" onclick="toggleButton(this, 'Mexican')">
+            <div class="button-text">Mexican</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button thai" onclick="toggleButton(this, 'Thai')">
+            <div class="button-text">Thai</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button vietnamese" onclick="toggleButton(this, 'Vietnamese')">
+            <div class="button-text">Vietnamese</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button mediterranean" onclick="toggleButton(this, 'Mediterranean')">
+            <div class="button-text">Mediterranean</div>
+            <div class="button-overlay"></div>
+        </button>
+        <button class="grid-button peruvian" onclick="toggleButton(this, 'Peruvian')">
+            <div class="button-text">Peruvian</div>
+            <div class="button-overlay"></div>
+        </button>
+    </div>
+
+    <div class="slider-label">
+        <label>Distance</label>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider" id="slider1"></div>
+        <div class="no-circle" id="circle1"></div>
+        <div class="circle" id="circle2"></div>
+        <div class="percentage-label" id="label1"></div>
+        <div class="percentage-label" id="label2">100</div>
+    </div>
+
+    <div class="slider-label">
+        <label>Price Range</label>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider" id="slider2"></div>
+        <div class="circle" id="circle3"></div>
+        <div class="circle" id="circle4"></div>
+        <div class="percentage-label" id="label3">$</div>
+        <div class="percentage-label" id="label4">$$$$</div>
+    </div>
+
+    <div class="button-container">
+        <button class="bottombuttons" onclick="resetEverything()">Reset</button>
+        <button class="bottombuttons" onclick="searchEverything()">Search</button>
+    </div>
+
+    <script src="requirements.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="party.css" />
+  <title>Party App</title>
+</head>
+
+<body>
+  <input type="text" id="nameInputMember" class="nameInput" placeholder="Your Name">
+
+  <div class="button-container">
+    <button id="partyLeaderButton" onclick="toggleView('partyLeader')">
+      Party Leader
+    </button>
+    <button id="partyMemberButton" onclick="toggleView('partyMember')">
+      Party Member
+    </button>
+  </div>
+
+  <div class="partyContent" id="partyContent">
+    <p class="generatedCode" id="generatedCode"></p>
+    <input type="text" class="joinCode" id="joinCode" placeholder="Enter Code" />
+  </div>
+
+  <div class="joinedMembers" id="joinedMembers">
+    <h3>Joined Members:</h3>
+    <div id="joinedMembersList"></div>
+  </div>
+
+  <script src="party.js"></script>
+</body>
+
+</html>
