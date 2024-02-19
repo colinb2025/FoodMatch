@@ -1,51 +1,62 @@
-let card = document.getElementById('card');
-    let container = document.getElementById('card-container');
-    let thresholdPercentage = 0.4;
-    let cooldown = 2500; // 1 second cooldown
-    let lastApprovalTime = 0;
-    let lastDisapprovalTime = 0;
-
-    container.addEventListener('mousemove', function (e) {
-        let middleX = window.innerWidth / 2;
-        let deltaX = e.clientX - middleX;
-
-        card.style.transform = `translateX(${deltaX}px) rotate(${deltaX / 10}deg)`;
-
-        // Approval action when cursor is in the right 20% of the window
-        if (e.clientX > window.innerWidth * (1 - thresholdPercentage)) {
-            if (Date.now() - lastApprovalTime >= cooldown) {
-                console.log('Approval!');
-                lastApprovalTime = Date.now();
-                initiateRotation(true);
-            }
-        }
-
-        // Disapproval action when cursor is in the left 20% of the window
-        if (e.clientX < window.innerWidth * thresholdPercentage) {
-            if (Date.now() - lastDisapprovalTime >= cooldown) {
-                console.log('Disapproval!');
-                lastDisapprovalTime = Date.now();
-                initiateRotation(false);
-            }
-        }
+document.addEventListener('DOMContentLoaded', function () {
+    let cooldown = 500; // 0.5 second cooldown
+    let isAnimationInProgress = false;
+  
+    function createCard() {
+      let cardContainer = document.getElementById('card-container');
+      let card = document.createElement('div');
+      card.className = 'card';
+      card.style.backgroundColor = getRandomColor(); // Function to get a random color
+      cardContainer.appendChild(card);
+  
+      return card;
+    }
+  
+    function getRandomColor() {
+      // Function to generate a random hex color
+      return '#' + Math.floor(Math.random() * 16777215).toString(16);
+    }
+  
+    function slideAndDisappear(card, side) {
+      isAnimationInProgress = true;
+  
+      // Slide to the left or right based on the side
+      card.style.transition = 'transform 0.5s ease, opacity 0.5s ease';
+      card.style.transform = side === 'right' ? 'translateX(100%) scale(0.5)' : 'translateX(-100%) scale(0.5)';
+      card.style.opacity = 0;
+  
+      // After 0.5 seconds, remove the card from the container
+      setTimeout(() => {
+        card.remove();
+        createCard();
+        isAnimationInProgress = false;
+      }, cooldown);
+    }
+  
+    document.addEventListener('click', function (e) {
+      if (isAnimationInProgress) {
+        return;
+      }
+  
+      let middleX = window.innerWidth / 2;
+      let side = e.clientX > middleX ? 'right' : 'left';
+  
+      if (side === 'right') {
+        console.log('Approval!');
+      } else {
+        console.log('Disapproval!');
+      }
+  
+      let existingCard = document.querySelector('.card');
+      
+      if (existingCard) {
+        slideAndDisappear(existingCard, side);
+      } else {
+        createCard();
+      }
     });
-
-    function initiateRotation(approve) {
-        // Rotate infinitely with decreasing scale
-        card.style.transition = 'transform 1s linear';
-        card.style.transform = approve ? 'rotate(360deg) scale(0.5)' : 'rotate(-360deg) scale(0.5)';
-
-        // Reset card position after a short delay
-        setTimeout(() => {
-            resetCardPosition();
-        }, 1000);
-    }
-
-    function resetCardPosition() {
-        // Reset card position
-        card.style.transition = 'none';
-        setTimeout(() => {
-            card.style.transition = 'transform 0.3s ease';
-            card.style.transform = 'translateX(0) rotate(0)';
-        }, 0);
-    }
+  
+    // Initial card creation
+    createCard();
+  });
+  
