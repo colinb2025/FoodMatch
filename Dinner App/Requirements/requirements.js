@@ -234,5 +234,5 @@ function searchEverything() {
 
 
 function goToSwipePage() {
-  window.location.href = '/Swipe/swipe.html';
+  window.location.href = '/Dinner%20App/Swipe/swipe.html';
 }
