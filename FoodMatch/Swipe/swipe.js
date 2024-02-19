@@ -78,3 +78,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initial card creation
     createCard();
 });
+ 
